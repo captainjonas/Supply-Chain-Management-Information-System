@@ -1,0 +1,17 @@
+2017-08-16 11:50:43,990 INFO  - com.aowin.dao.Test INFO
+2017-08-16 11:50:44,419 DEBUG - com.aowin.dao.Test DEBUG
+2017-08-16 11:50:44,421 ERROR - com.aowin.dao.Test ERROR
+2017-08-16 11:50:44,423 WARN  - com.aowin.dao.Test WARN
+2017-08-16 11:59:04,299 INFO  - com.aowin.servlet.AddCategory INFO
+2017-08-16 11:59:04,314 DEBUG - com.aowin.servlet.AddCategory DEBUG
+2017-08-16 11:59:04,316 ERROR - com.aowin.servlet.AddCategory ERROR
+2017-08-16 11:59:04,318 WARN  - com.aowin.servlet.AddCategory WARN
+2017-08-16 14:21:01,204 INFO  - com.aowin.servlet.Servlet_login INFO
+2017-08-16 14:21:01,235 DEBUG - com.aowin.servlet.Servlet_login DEBUG
+2017-08-16 14:21:01,237 ERROR - com.aowin.servlet.Servlet_login ERROR
+2017-08-16 14:21:01,239 WARN  - com.aowin.servlet.Servlet_login WARN
+2017-08-16 14:21:17,568 INFO  - com.aowin.servlet.StockSum INFO
+2017-08-16 14:21:17,572 DEBUG - com.aowin.servlet.StockSum DEBUG
+2017-08-16 14:21:17,574 ERROR - com.aowin.servlet.StockSum ERROR
+2017-08-16 14:21:17,576 WARN  - com.aowin.servlet.StockSum WARN
+2017-08-16 14:42:30,581 ERROR - com.aowin.servlet.StockSum 数据库异常

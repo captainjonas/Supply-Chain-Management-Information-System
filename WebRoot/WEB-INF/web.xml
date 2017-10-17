@@ -1,0 +1,604 @@
+<?xml version="1.0" encoding="utf-8"?>
+<web-app version="3.0"
+    xmlns="http://java.sun.com/xml/ns/javaee"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd">
+
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    
+  
+  <filter>
+	<filter-name>encodeFilter</filter-name>  
+	<filter-class>com.aowin.filter.EncodeFilter</filter-class>
+	<init-param>
+		<param-name>encode</param-name>
+		<param-value>UTF-8</param-value>
+	</init-param>
+  </filter>
+   <filter>
+  	<filter-name>Login_file</filter-name>
+  	<filter-class>com.aowin.filter.Logan</filter-class>
+  </filter>
+  <filter>
+  	<filter-name>authorityFilter</filter-name>
+  	<filter-class>com.aowin.filter.Atherfil</filter-class>
+  </filter>
+    <filter>
+  	<filter-name>sFilter</filter-name>
+  	<filter-class>com.aowin.filter.stockFilter</filter-class>
+  </filter>
+    <filter>
+  	<filter-name>saleFilter</filter-name>
+  	<filter-class>com.aowin.filter.SaleFilter</filter-class>
+  </filter>
+  
+  
+  <filter-mapping>
+  	<filter-name>encodeFilter</filter-name>
+  	<url-pattern>/*</url-pattern>
+  </filter-mapping>
+ <filter-mapping>
+  	<filter-name>Login_file</filter-name>
+  	<url-pattern>/purchase/*</url-pattern>
+  </filter-mapping>
+  <filter-mapping>
+  	<filter-name>Login_file</filter-name>
+  	<url-pattern>/gztm/*</url-pattern>
+  </filter-mapping>
+  <filter-mapping>
+  	<filter-name>Login_file</filter-name>
+  	<url-pattern>/sale/*</url-pattern>
+  </filter-mapping>
+  <filter-mapping>
+  	<filter-name>authorityFilter</filter-name>
+  	<url-pattern>/purchase/*</url-pattern>
+  </filter-mapping>
+    <filter-mapping>
+  	<filter-name>sFilter</filter-name>
+  	<url-pattern>/gztm/*</url-pattern>
+  </filter-mapping>
+  <filter-mapping>
+  	<filter-name>saleFilter</filter-name>
+  	<url-pattern>/sale/*</url-pattern>
+  </filter-mapping>
+  
+  
+    <servlet>
+  <servlet-name>CustomerAddServlet</servlet-name>
+  <servlet-class>com.aowin.servlet.sale.CustomerAddServlet</servlet-class>
+  </servlet>
+  <servlet>
+  <servlet-name>CustomerUpdateServlet</servlet-name>
+  <servlet-class>com.aowin.servlet.sale.CustomerUpdateServlet</servlet-class>
+  </servlet>
+  <servlet>
+  <servlet-name>CustomerDeleteServlet</servlet-name>
+  <servlet-class>com.aowin.servlet.sale.CustomerDeleteServlet</servlet-class>
+  </servlet>
+  <servlet>
+  <servlet-name>CustomerSelectServlet</servlet-name>
+  <servlet-class>com.aowin.servlet.sale.CustomerSelectServlet</servlet-class>
+  </servlet>
+  <servlet>
+  <servlet-name>CustomerStartSelectServlet</servlet-name>
+  <servlet-class>com.aowin.servlet.sale.CustomerStartSelectServlet</servlet-class>
+  </servlet>
+  <servlet>
+  <servlet-name>CustomerGetServlet</servlet-name>
+  <servlet-class>com.aowin.servlet.sale.CustomerGetServlet</servlet-class>
+  </servlet>
+  
+  
+  <servlet>
+  <servlet-name>SomainGetServlet</servlet-name>
+  <servlet-class>com.aowin.servlet.sale.SomainGetServlet</servlet-class>
+  </servlet>
+   <servlet>
+  <servlet-name>SomainAddServlet</servlet-name>
+  <servlet-class>com.aowin.servlet.sale.SomainAddServlet</servlet-class>
+  </servlet>
+  <servlet>
+  <servlet-name>SomainSoitemSaveServlet</servlet-name>
+  <servlet-class>com.aowin.servlet.sale.SomainSoitemSaveServlet</servlet-class>
+  </servlet>
+  <servlet>
+  <servlet-name>SomainSoitemDeleteServlet</servlet-name>
+  <servlet-class>com.aowin.servlet.sale.SomainSoitemDeleteServlet</servlet-class>
+  </servlet>
+  <servlet>
+  <servlet-name>SomainSoitemUpdateServlet</servlet-name>
+  <servlet-class>com.aowin.servlet.sale.SomainSoitemUpdateServlet</servlet-class>
+  </servlet>
+  <servlet>
+  <servlet-name>SomainSoitemSaveAfterUpdateServlet</servlet-name>
+  <servlet-class>com.aowin.servlet.sale.SomainSoitemSaveAfterUpdateServlet</servlet-class>
+  </servlet>
+  <servlet>
+  <servlet-name>SomainSelectServlet</servlet-name>
+  <servlet-class>com.aowin.servlet.sale.SomainSelectServlet</servlet-class>
+  </servlet>
+  <servlet>
+  <servlet-name>SomainFinishGetServlet</servlet-name>
+  <servlet-class>com.aowin.servlet.sale.SomainFinishGetServlet</servlet-class>
+  </servlet>
+  
+  
+  <servlet>
+  <servlet-name>SomainFinishedServlet</servlet-name>
+  <servlet-class>com.aowin.servlet.sale.SomainFinishedServlet</servlet-class>
+  </servlet>
+  
+  <servlet>
+  <servlet-name>SomainJournalingServlet</servlet-name>
+  <servlet-class>com.aowin.servlet.sale.SomainJournalingServlet</servlet-class>
+  </servlet>
+  
+    <servlet>
+  <servlet-name>SomainSoitemDetailedServlet</servlet-name>
+  <servlet-class>com.aowin.servlet.sale.SomainSoitemDetailedServlet</servlet-class>
+  </servlet>
+  
+  <servlet>
+  <servlet-name>PageSplitServlet</servlet-name>
+  <servlet-class>com.aowin.servlet.sale.PageSplitServlet</servlet-class>
+  </servlet>
+   <servlet>
+  <servlet-name>SaleFinishedDetailedServlet</servlet-name>
+  <servlet-class>com.aowin.servlet.sale.SaleFinishedDetailedServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>QueryServlet</servlet-name>
+    <servlet-class>com.aowin.servlet.QueryServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>DeleteCategory</servlet-name>
+    <servlet-class>com.aowin.servlet.DeleteCategory</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>AddCategory</servlet-name>
+    <servlet-class>com.aowin.servlet.AddCategory</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>UpdateCategory</servlet-name>
+    <servlet-class>com.aowin.servlet.UpdateCategory</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>ProQuery</servlet-name>
+    <servlet-class>com.aowin.servlet.ProQuery</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>StoreQuery</servlet-name>
+    <servlet-class>com.aowin.servlet.StoreQuery</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>ChangeCheckStock</servlet-name>
+    <servlet-class>com.aowin.servlet.ChangeCheckStock</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>ProcurementQuery</servlet-name>
+    <servlet-class>com.aowin.servlet.ProcurementQuery</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>Servlet_login</servlet-name>
+    <servlet-class>com.aowin.servlet.Servlet_login</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>Login_out</servlet-name>
+    <servlet-class>com.aowin.servlet.Login_out</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>OutStock</servlet-name>
+    <servlet-class>com.aowin.servlet.OutStock</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>InstockSum</servlet-name>
+    <servlet-class>com.aowin.servlet.InstockSum</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>OutstockSum</servlet-name>
+    <servlet-class>com.aowin.servlet.OutstockSum</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>StockSum</servlet-name>
+    <servlet-class>com.aowin.servlet.StockSum</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>Asd</servlet-name>
+    <servlet-class>Servlet.Asd</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>Fr</servlet-name>
+    <servlet-class>Servlet.Fr</servlet-class>
+  </servlet>
+ <servlet>
+    <servlet-name>Finall</servlet-name>
+    <servlet-class>Servlet.Finall</servlet-class>
+  </servlet>
+ <servlet>
+    <servlet-name>Find</servlet-name>
+    <servlet-class>Servlet.Find</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>Allmo</servlet-name>
+    <servlet-class>Servlet.Allmo</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>Fin</servlet-name>
+    <servlet-class>Servlet.Fin</servlet-class>
+  </servlet>
+ <servlet>
+    <servlet-name>Chuang</servlet-name>
+    <servlet-class>Servlet.Chuang</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>Change</servlet-name>
+    <servlet-class>Servlet.Change</servlet-class>
+  </servlet>
+ <servlet>
+    <servlet-name>Ser</servlet-name>
+    <servlet-class>Servlet.Ser</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>Adder</servlet-name>
+    <servlet-class>Servlet.Adder</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>Del</servlet-name>
+    <servlet-class>Servlet.Del</servlet-class>
+  </servlet>
+ <servlet>
+    <servlet-name>Delete</servlet-name>
+    <servlet-class>Servlet.Delete</servlet-class>
+  </servlet>
+   <servlet>
+    <servlet-name>Customer</servlet-name>
+    <servlet-class>Servlet.Cur</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>Provider_servlet</servlet-name>
+    <servlet-class>Servlet.Provider_servlet</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>SeekPomain</servlet-name>
+    <servlet-class>Servlet.SeekPomain</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>Category</servlet-name>
+    <servlet-class>com.aowin.servlet.Category</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>InRegister</servlet-name>
+    <servlet-class>com.aowin.servlet.InRegister</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>OutRegister</servlet-name>
+    <servlet-class>com.aowin.servlet.OutRegister</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>Baobiao1</servlet-name>
+    <servlet-class>Servlet.Baobiao</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>Ruku1</servlet-name>
+    <servlet-class>com.aowin.servlet.Ruku</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>Chuku1</servlet-name>
+    <servlet-class>com.aowin.servlet.Chuku</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>Kucun1</servlet-name>
+    <servlet-class>com.aowin.servlet.Kucun</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>SaleSelect</servlet-name>
+    <servlet-class>com.aowin.servlet.sale.SaleSelect</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>SaleJournaling</servlet-name>
+    <servlet-class>com.aowin.servlet.sale.SaleJournaling</servlet-class>
+  </servlet>
+
+
+
+
+
+
+
+
+
+
+
+
+<servlet-mapping>
+    <servlet-name>Delete</servlet-name>
+    <url-pattern>/servlet/Delete</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>Ser</servlet-name>
+    <url-pattern>/servlet/Ser</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>Adder</servlet-name>
+    <url-pattern>/servlet/Adder</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>Del</servlet-name>
+    <url-pattern>/servlet/Del</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>Find</servlet-name>
+    <url-pattern>/servlet/Find</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>Allmo</servlet-name>
+    <url-pattern>/servlet/Allmo</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>Fin</servlet-name>
+    <url-pattern>/servlet/Fin</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>Finall</servlet-name>
+    <url-pattern>/servlet/Finall</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>Fr</servlet-name>
+    <url-pattern>/servlet/Fr</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>Asd</servlet-name>
+    <url-pattern>/servlet/Asd</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>QueryServlet</servlet-name>
+    <url-pattern>/query</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>DeleteCategory</servlet-name>
+    <url-pattern>/dele</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>AddCategory</servlet-name>
+    <url-pattern>/add</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>UpdateCategory</servlet-name>
+    <url-pattern>/update</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>ProQuery</servlet-name>
+    <url-pattern>/pro</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>StoreQuery</servlet-name>
+    <url-pattern>/store</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>ChangeCheckStock</servlet-name>
+    <url-pattern>/chang</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>ProcurementQuery</servlet-name>
+    <url-pattern>/procure</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>Servlet_login</servlet-name>
+    <url-pattern>/servlet/Servlet_login</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>Login_out</servlet-name>
+    <url-pattern>/servlet/Login_out</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>OutStock</servlet-name>
+    <url-pattern>/sale1</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>InstockSum</servlet-name>
+    <url-pattern>/instockSum</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>OutstockSum</servlet-name>
+    <url-pattern>/outstockSum</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>StockSum</servlet-name>
+    <url-pattern>/stockSum</url-pattern>
+  </servlet-mapping>
+ <servlet-mapping>
+    <servlet-name>Chuang</servlet-name>
+    <url-pattern>/servlet/Chuang</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>Change</servlet-name>
+    <url-pattern>/servlet/Change</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>Customer</servlet-name>
+    <url-pattern>/servlet/Cur</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>Provider_servlet</servlet-name>
+    <url-pattern>/servlet/pro</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>SeekPomain</servlet-name>
+    <url-pattern>/cha</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>Category</servlet-name>
+    <url-pattern>/servlet/Category</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>InRegister</servlet-name>
+    <url-pattern>/inregister</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>OutRegister</servlet-name>
+    <url-pattern>/outregist</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>Baobiao1</servlet-name>
+    <url-pattern>/baobiao</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>Ruku1</servlet-name>
+    <url-pattern>/ruku</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>Chuku1</servlet-name>
+    <url-pattern>/chuku</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>Kucun1</servlet-name>
+    <url-pattern>/kucun</url-pattern>
+  </servlet-mapping>
+   <servlet-mapping>
+  	<servlet-name>CustomerAddServlet</servlet-name>
+  	<url-pattern>/customerAdd</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>CustomerUpdateServlet</servlet-name>
+  	<url-pattern>/customerUpdate</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>CustomerDeleteServlet</servlet-name>
+  	<url-pattern>/customerDelete</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>CustomerSelectServlet</servlet-name>
+  	<url-pattern>/customerSelect</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>CustomerStartSelectServlet</servlet-name>
+  	<url-pattern>/customerStartSelect</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>CustomerGetServlet</servlet-name>
+  	<url-pattern>/customerGet</url-pattern>
+  </servlet-mapping>
+  
+  
+   <servlet-mapping>
+  	<servlet-name>SomainGetServlet</servlet-name>
+  	<url-pattern>/somainGet</url-pattern>
+  </servlet-mapping>
+  
+  <servlet-mapping>
+  	<servlet-name>SomainAddServlet</servlet-name>
+  	<url-pattern>/somainAdd</url-pattern>
+  </servlet-mapping>
+  
+  <servlet-mapping>
+  	<servlet-name>SomainSoitemSaveServlet</servlet-name>
+  	<url-pattern>/somainSoitemSave</url-pattern>
+  </servlet-mapping>
+   <servlet-mapping>
+  	<servlet-name>SomainSoitemDeleteServlet</servlet-name>
+  	<url-pattern>/somainSoitemDelete</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>SomainSoitemUpdateServlet</servlet-name>
+  	<url-pattern>/somainSoitemUpdate</url-pattern>
+  </servlet-mapping>
+  
+  <servlet-mapping>
+  	<servlet-name>SomainSoitemSaveAfterUpdateServlet</servlet-name>
+  	<url-pattern>/somainSoitemSaveAfterUpdate</url-pattern>
+  </servlet-mapping>
+  
+  
+  <servlet-mapping>
+  	<servlet-name>SomainSelectServlet</servlet-name>
+  	<url-pattern>/somainSelect</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>SomainFinishGetServlet</servlet-name>
+  	<url-pattern>/somainFinishGet</url-pattern>
+  </servlet-mapping>
+  
+  
+  <servlet-mapping>
+  	<servlet-name>SomainFinishedServlet</servlet-name>
+  	<url-pattern>/somainFinished</url-pattern>
+  </servlet-mapping>
+  
+  <servlet-mapping>
+  	<servlet-name>SomainJournalingServlet</servlet-name>
+  	<url-pattern>/somainJournaling</url-pattern>
+  </servlet-mapping>
+  
+  <servlet-mapping>
+  	<servlet-name>SomainSoitemDetailedServlet</servlet-name>
+  	<url-pattern>/somainSoitemDetailed</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>PageSplitServlet</servlet-name>
+  	<url-pattern>/pageSplit</url-pattern>
+  </servlet-mapping>
+  
+   <servlet-mapping>
+  	<servlet-name>SaleFinishedDetailedServlet</servlet-name>
+  	<url-pattern>/saleFinishedDetailed</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>SaleSelect</servlet-name>
+    <url-pattern>/saleSelect</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>SaleJournaling</servlet-name>
+    <url-pattern>/saleJournaling</url-pattern>
+  </servlet-mapping>
+  
+  
+</web-app>
